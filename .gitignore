@@ -1,6 +1,9 @@
 #Maven generated build
 target/
 
+#Build result
+out/
+
 #Intellij IDEA files
 .idea
 *iml
