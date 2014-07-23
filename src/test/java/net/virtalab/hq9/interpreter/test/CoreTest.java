@@ -5,14 +5,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.IllegalFormatException;
-
 /**
  * Tests core (interpreter itself)
  */
 public class CoreTest {
 
-    private static String HELLO_TEXT="Hello, world!";
+    private static String HELLO_TEXT="Hello world";
 
     private Interpreter i;
 
@@ -34,7 +32,7 @@ public class CoreTest {
 
     @Test
     public void DoubleHelloTest(){
-        String code = "H";
+        String code = "HH";
         String expectedResult = HELLO_TEXT+System.lineSeparator()+HELLO_TEXT;
 
         i.run(code);
@@ -44,7 +42,7 @@ public class CoreTest {
 
     }
 
-    @Test(expected = IllegalFormatException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void SyntaxErrorOnWrongLetter(){
         String code = "V";
 

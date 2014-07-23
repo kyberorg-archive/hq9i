@@ -1,7 +1,5 @@
 package net.virtalab.hq9.interpreter;
 
-import java.util.IllegalFormatException;
-
 /**
  * Stub meanless stuff (we should start from something)
  *
@@ -22,7 +20,7 @@ public class App {
 
                 System.out.println("Result: ");
                 System.out.println(i.getResult());
-            }catch (IllegalFormatException ife){
+            }catch (IllegalArgumentException ife){
                 System.err.println(ife.getMessage());
             }
         } else {
