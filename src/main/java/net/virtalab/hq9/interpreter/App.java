@@ -24,7 +24,8 @@ public class App {
                 System.err.println(ife.getMessage());
             }
         } else {
-            System.err.println("Usage: hq9i <HQ9+ code>");
+            //System.err.println("Usage: hq9i <HQ9+ code>");
+            Usage.show();
         }
     }
 
