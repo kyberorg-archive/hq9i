@@ -1,11 +1,12 @@
 package net.virtalab.hq9.interpreter;
 
+import java.util.IllegalFormatException;
+
 /**
  * Stub meanless stuff (we should start from something)
  *
  */
 public class App {
-    public static String LINE = "Hello, here will be HQ9+ interpeter soon. Stay turned and check our repo at GitHub";
 
     /**
      * App starts here
@@ -13,15 +14,20 @@ public class App {
      * @param args incoming arguments. Consider look into usage section (later we will add it)
      */
     public static void main(String[] args){
-        System.out.println(getLine());
+        if(args.length>=1){
+            String code = args[0];
+            Interpreter i = Interpreter.init();
+            try {
+                i.run(code);
+
+                System.out.println("Result: ");
+                System.out.println(i.getResult());
+            }catch (IllegalFormatException ife){
+                System.err.println(ife.getMessage());
+            }
+        } else {
+            System.err.println("Usage: hq9i <HQ9+ code>");
+        }
     }
 
-    /**
-     * Dummy getter for Stub Unit Test
-     *
-     * @return line to print
-     */
-    public static String getLine(){
-        return LINE;
-    }
 }
