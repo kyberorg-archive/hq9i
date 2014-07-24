@@ -11,7 +11,7 @@ public class Usage {
     public static String show(){
         StringBuilder usage = new StringBuilder();
 
-        usage.append("Usage: hq9i <code>").append(System.lineSeparator());
+        usage.append("Usge: hq9i <code>").append(System.lineSeparator());
         usage.append("Example: hq9i HQ");
 
         return usage.toString();
